@@ -7,6 +7,10 @@ body {
   .head {
     background-color: white;
   }
+
+  mat-form-field {
+    background-color: #d5b537;
+  }
   
   .largeAlignment {
       padding: 16px;
@@ -15,16 +19,6 @@ body {
   .smallAlignment {
       padding: 5px;
   }
-
-  a {
-    color: black;
-    text-decoration: None;
-  }
-  
-  a:hover {
-    color: #d5b537;
-  }
-  
 
   .rowflex {
     display: flex;
@@ -35,15 +29,27 @@ body {
   .columnflex {
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
   
   #textbox {
     background-color: #d5b537;
     border: none;
-    width: 250px;
+    width: 400px;
     height: 35px;
     border-radius: 10px;
     text-decoration: none;
+    align-self: center;
+  }
+
+  #descrip {
+    background-color:white;
+    border: none;
+    width: 400px;
+    height: 100px;
+    border-radius: 10px;
+    text-decoration: none;
+    align-self: center;
   }
   
   

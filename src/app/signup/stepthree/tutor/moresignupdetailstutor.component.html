@@ -8,23 +8,57 @@
             <div class="content-wrap">
                 <h3>Sign Up</h3>
                 <div class='largeAlignment'></div>
-                <span>Choose One:</span>
+                <div class='columnflex'>
+                    <span>Teachable Grades</span>
+                    <div class='smallAlignment'></div>
+                    <div class='rowflex'>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Lowest Grade</mat-label>
+                            <mat-select>
+                                <mat-option>None</mat-option>
+                                <mat-option value="k">K</mat-option>
+                                <mat-option value="first">1st</mat-option>
+                                <mat-option value="second">2nd</mat-option>
+                                <mat-option value="third">3rd</mat-option>
+                                <mat-option value="fourth">4th</mat-option>
+                                <mat-option value="fifth">5th</mat-option>
+                                <mat-option value="sixth">6th</mat-option>
+                                <mat-option value="seventh">7th</mat-option>
+                                <mat-option value="eight">8th</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div class='smallAlignment'></div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Highest Grade</mat-label>
+                            <mat-select>
+                                <mat-option>None</mat-option>
+                                <mat-option value="k">K</mat-option>
+                                <mat-option value="first">1st</mat-option>
+                                <mat-option value="second">2nd</mat-option>
+                                <mat-option value="third">3rd</mat-option>
+                                <mat-option value="fourth">4th</mat-option>
+                                <mat-option value="fifth">5th</mat-option>
+                                <mat-option value="sixth">6th</mat-option>
+                                <mat-option value="seventh">7th</mat-option>
+                                <mat-option value="eight">8th</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
                 <div class='smallAlignment'></div>
-                <div class='rowflex'>
+                <div>
                     <div class='columnflex'>
-                        <span>Tutor</span>
                         <div class='largeAlignment'></div>
-                        <span>Age</span>
+                        <span>Teachable Subjects</span>
                         <div class='smallAlignment'></div>
                         <input id="textbox" type="text" />
                     </div>
                     <div class='smallAlignment'></div>
                     <div class='columnflex'>
-                        <span>Student</span>
                         <div class='largeAlignment'></div>
-                        <span>Grade</span>
+                        <span>Description of Yourself</span>
                         <div class='smallAlignment'></div>
-                        <input id="textbox" type="text" />
+                        <input id="descrip" type="text" aria-multiline="true"/>
                     </div>
                 </div>
 

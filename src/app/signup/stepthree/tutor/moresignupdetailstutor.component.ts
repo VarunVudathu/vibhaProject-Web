@@ -6,4 +6,6 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./moresignupdetailstutor.component.scss']
 })
 export class MoreSignUpDetailsTutorComponent {
+  selected = 'None';
+  selected1 = 'None';
 }

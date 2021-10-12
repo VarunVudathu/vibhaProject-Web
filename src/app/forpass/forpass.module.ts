@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from '@angular/platform-browser';
-
-import { MoreSignUpDetailsTutorComponent } from './moresignupdetailstutor.component';
+import { ForPassComponent } from './forpass.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSelectModule } from '@angular/material/select'
 
 @NgModule({
   declarations: [],
@@ -15,9 +13,8 @@ import { MatSelectModule } from '@angular/material/select'
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatSelectModule,
   ],
   providers: [],
-  bootstrap: [MoreSignUpDetailsTutorComponent]
+  bootstrap: [ForPassComponent]
 })
-export class MoreSignUpDetailsTutorModule {}
+export class ForPassModule {}
