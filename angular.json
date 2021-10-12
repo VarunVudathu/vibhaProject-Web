@@ -31,9 +31,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/scss/bootstrap.min.scss",
               "src/styles.scss"
             ],
-            "scripts": [ "./node_modules/hammerjs/hammer.min.js"]
+            "scripts": [
+              "./node_modules/hammerjs/hammer.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -101,7 +104,19 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [ "./node_modules/hammerjs/hammer.min.js"]
+            "scripts": [
+              "./node_modules/hammerjs/hammer.min.js"
+            ]
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "vibhaProject-Web:build:production",
+            "firebaseProject": "vibha-e4d08",
+            "firebaseHostingSite": "vibha-e4d08"
           }
         }
       }
