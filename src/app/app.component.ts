@@ -8,5 +8,4 @@ import { IgxNavigationDrawerComponent } from 'igniteui-angular';
 })
 export class AppComponent {
   title = 'vibhaProject-Web';
-  
 }

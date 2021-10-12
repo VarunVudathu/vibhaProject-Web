@@ -1,0 +1,79 @@
+body {
+    background-color: #8839bf;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .head {
+    background-color: white;
+  }
+  
+  .largeAlignment {
+      padding: 16px;
+  }
+  
+  .smallAlignment {
+      padding: 5px;
+  }
+
+  a {
+    color: black;
+    text-decoration: None;
+  }
+  
+  a:hover {
+    color: #d5b537;
+  }
+  
+
+  .rowflex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .columnflex {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #textbox {
+    background-color: #d5b537;
+    border: none;
+    width: 250px;
+    height: 35px;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+  
+  
+  #subbutton {
+      background-color: #464444;
+      border: none;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 16px;
+      border-radius: 20px;
+      width: 250px;
+  }
+
+  fa-icon {
+      font-size: 120px;
+  }
+
+  #tutoricon {
+      border-style: solid;
+      border-color: #d5b537;
+      border-width: 3px;
+      padding: 20px;
+      border-radius: 10px;
+  }
+  
+  #stuicon {
+    border-style: solid;
+    border-color: #d5b537;
+    border-width: 3px;
+    padding: 20px;
+    border-radius: 10px;
+}
