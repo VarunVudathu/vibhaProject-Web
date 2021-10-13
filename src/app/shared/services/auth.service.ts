@@ -1,7 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
 import { User } from "./user";
-import auth from 'firebase/compat';
-
+import { GoogleAuthProvider, FacebookAuthProvider } from 'firebase/auth';
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { Router } from "@angular/router";
@@ -25,10 +24,10 @@ export class AuthService {
       if (user) {
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
-        JSON.parse(localStorage.getItem('user'));
+        JSON.parse(localStorage.getItem('user') || '{}');
       } else {
-        localStorage.setItem('user', null);
-        JSON.parse(localStorage.getItem('user'));
+        localStorage.setItem('user', '');
+        JSON.parse(localStorage.getItem('user') || '{}');
       }
     })
   }
@@ -38,7 +37,7 @@ export class AuthService {
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['home']);
         });
         this.SetUserData(result.user);
       }).catch((error) => {
@@ -70,8 +69,8 @@ export class AuthService {
 
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'));
-    return ? true : false;
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    return (user !== null && user.emailVerified !== false) ? true : false;
   }
 
   // Sign in with Google
@@ -79,12 +78,16 @@ export class AuthService {
     return this.AuthLogin(new GoogleAuthProvider());
   }
 
+  FacebookAuth() {
+    return this.AuthLogin(new FacebookAuthProvider());
+  }
+
   // Auth logic to run auth providers
   AuthLogin(provider) {
     return this.afAuth.signInWithPopup(provider)
     .then((result) => {
        this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['home']);
         })
       this.SetUserData(result.user);
     }).catch((error) => {
@@ -113,7 +116,7 @@ export class AuthService {
   SignOut() {
     return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['sign-in']);
+      this.router.navigate(['login']);
     })
   }
 

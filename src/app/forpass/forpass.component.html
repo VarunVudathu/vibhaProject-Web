@@ -10,9 +10,9 @@
                 <div class='largeAlignment'></div>
                 <span>Email</span>
                 <div class='smallAlignment'></div>
-                <input id="textbox" type="text"/><br>
+                <input id="textbox" type="text" #passwordResetEmail required/><br>
                 <div class='largeAlignment'></div>
-                <button id='subbutton'>Send Request</button>
+                <button id='subbutton' onclick=authService.ForgotPassword(passwordResetEmail.value)>Send Request</button>
             </div>
         </div>
     </body>

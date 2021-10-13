@@ -13,7 +13,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-// import { AuthService } from "./shared/services/auth.service";
+import { AuthService } from "./shared/services/auth.service";
 // import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 // import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 // import { provideDatabase,getDatabase } from '@angular/fire/database';
@@ -52,7 +52,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     // provideRemoteConfig(() => getRemoteConfig()),
     // provideStorage(() => getStorage()),
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -25,7 +25,7 @@
                 <label for="rm">Remember me</label><br>
                 <div class='smallAlignment'></div>
 
-                <button id='subbutton' onclick=authService.SignIn(userName.value,userPassword.value)>Log In</button><br>
+                <input type="button" id='subbutton' value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)"><br>
                 <div class='smallAlignment'></div>
                 <span>--- OR ---</span><br>
                 <div class='smallAlignment'></div>
@@ -34,10 +34,10 @@
                 
                 <div class='imgsel'>
                     <div id='gimgsep'>
-                        <img src="../../assets/images/glogo.png" alt="Google Logo" class='logoImg' id='gimg' onclick=authService.GoogleAuth()>
+                        <input type="image" src="../../assets/images/glogo.png" (click)=authService.GoogleAuth() class='newImg'/>
                     </div>
                     <div id ='fimgsep'>
-                        <img src="../../assets/images/flogo.png" alt="Facebook Logo" class='logoImg' id='fimg' onclick=>
+                        <input type="image" src="../../assets/images/flogo.png" (click)=authService.FacebookAuth() class='newImg'/>
                     </div>
                 </div>
                 <br>
