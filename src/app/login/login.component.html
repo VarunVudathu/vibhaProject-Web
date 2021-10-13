@@ -10,12 +10,12 @@
                 <div class='largeAlignment'></div>
                 <span>Username</span><br>
                 <div class='smallAlignment'></div>
-                <input id="textbox" type="text"/><br>
+                <input id="textbox" type="text" #userName required/><br>
 
                 <div class='largeAlignment'></div>
                 <span>Password</span><br>
                 <div class='smallAlignment'></div>
-                <input id="textbox" type="text" /><br>
+                <input id="textbox" type="password" #userPassword required/><br>
 
                 <div class='smallAlignment'></div>
                 <a routerLink='/forpass' routerLinkActive='active'>Forgot Password?</a><br>
@@ -25,7 +25,7 @@
                 <label for="rm">Remember me</label><br>
                 <div class='smallAlignment'></div>
 
-                <button id='subbutton'>Log In</button><br>
+                <button id='subbutton' onclick=authService.SignIn(userName.value,userPassword.value)>Log In</button><br>
                 <div class='smallAlignment'></div>
                 <span>--- OR ---</span><br>
                 <div class='smallAlignment'></div>
@@ -34,7 +34,7 @@
                 
                 <div class='imgsel'>
                     <div id='gimgsep'>
-                        <img src="../../assets/images/glogo.png" alt="Google Logo" class='logoImg' id='gimg' onclick=>
+                        <img src="../../assets/images/glogo.png" alt="Google Logo" class='logoImg' id='gimg' onclick=authService.GoogleAuth()>
                     </div>
                     <div id ='fimgsep'>
                         <img src="../../assets/images/flogo.png" alt="Facebook Logo" class='logoImg' id='fimg' onclick=>

@@ -31,7 +31,6 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/scss/bootstrap.min.scss",
               "src/styles.scss"
             ],
             "scripts": [

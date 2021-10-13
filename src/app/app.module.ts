@@ -10,12 +10,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatSelectModule } from '@angular/material/select'
 import { environment } from '../environments/environment';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+// import { AuthService } from "./shared/services/auth.service";
+// import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 // import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 // import { provideDatabase,getDatabase } from '@angular/fire/database';
-import { provideFirestore, getFirestore} from '@angular/fire/firestore';
+// import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+// import { provideAuth, getAuth } from '@angular/fire/auth';
 // import { provideFunctions,getFunctions } from '@angular/fire/functions';
-import { provideMessaging,getMessaging } from '@angular/fire/messaging';
+// import { provideMessaging, getMessaging } from '@angular/fire/messaging';
 // import { providePerformance,getPerformance } from '@angular/fire/performance';
 // import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 // import { provideStorage,getStorage } from '@angular/fire/storage';
@@ -33,13 +38,16 @@ import { provideMessaging,getMessaging } from '@angular/fire/messaging';
     MatIconModule,
     FontAwesomeModule,
     MatSelectModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),
     // provideAnalytics(() => getAnalytics()),
-    provideAuth(() => getAuth()),
+    // provideAuth(() => getAuth()),
     // provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore()),
+    // provideFirestore(() => getFirestore()),
     // provideFunctions(() => getFunctions()),
-    provideMessaging(() => getMessaging()),
+    // provideMessaging(() => getMessaging()),
     // providePerformance(() => getPerformance()),
     // provideRemoteConfig(() => getRemoteConfig()),
     // provideStorage(() => getStorage()),
