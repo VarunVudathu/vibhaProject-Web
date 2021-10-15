@@ -10,7 +10,7 @@ export const environment = {
     storageBucket: 'vibha-e4d08.appspot.com',
     locationId: 'us-central',
     apiKey: 'AIzaSyAAdtQIM8rUuh2nu_L2Mwg-HRCL_1WQWSs',
-    authDomain: 'vibha-e4d08.firebaseapp.com',
+    authDomain: 'vibha-e4d08.com',
     messagingSenderId: '446909967011',
     measurementId: 'G-T1ZD28GNH6',
   },
