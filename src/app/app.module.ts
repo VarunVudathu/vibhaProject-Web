@@ -24,6 +24,7 @@ import { AuthService } from "./shared/services/auth.service";
 // import { providePerformance,getPerformance } from '@angular/fire/performance';
 // import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 // import { provideStorage,getStorage } from '@angular/fire/storage';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { AuthService } from "./shared/services/auth.service";
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    MatSidenavModule,
     // provideFirebaseApp(() => initializeApp(environment.firebase)),
     // provideAnalytics(() => getAnalytics()),
     // provideAuth(() => getAuth()),

@@ -1,0 +1,54 @@
+body {
+    justify-content: center;
+    text-align: center;
+}
+
+.head {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+mat-drawer {
+    width: 20%;
+    background-color: #d5b537;
+}
+
+mat-drawer-content {
+    background-color: #8839bf;
+}
+
+.nav-link {
+    background-color: #d5b537;
+    border: none;
+    font-size: 25px;
+}
+
+.icon {
+    font-size: 30px;
+}
+
+.smallAlignment {
+    padding: 3%;
+}
+
+.excess {
+    padding-left: 5%;
+}
+
+.adjus {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding-left: 15%
+}
+
+#menuicon {
+    font-size: 50px;
+    padding-top: 1%;
+    padding-left: 5%;
+}
+
+#logoimg {
+    padding-left: 35%;
+}
