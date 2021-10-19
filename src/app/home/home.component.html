@@ -4,7 +4,19 @@
     <div class="container-fluid">
       <mat-drawer-container fullscreen>
         <mat-drawer #drawer mode="over">
-          <p>Menu</p>
+          <div id='profilebut'>
+            <fa-icon [icon]="faUserCircle" class='newImg' routerLink='/home' routerLinkActive='active'></fa-icon>
+            <div id='columnflex'>
+              <span>USERNAME</span>
+              <div id='rowflex'>
+                <span>AGE</span>
+                <span>GRADE</span>
+              </div>
+            </div>
+          </div>
+
+          <p>________________________________</p>
+
           <div class='adjus'>
             <fa-icon [icon]="faHome" class='icon'></fa-icon>
             <div class='excess'></div>

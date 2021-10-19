@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../shared/services/auth.service";
-import { faHome, faClipboardList, faCalendar, faChartPie, faInfoCircle, faBuilding, faPhone, faComments, faSignOutAlt, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faClipboardList, faCalendar, faChartPie, faInfoCircle, faBuilding, faPhone, faComments, faSignOutAlt, faBars, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   faComments = faComments;
   faSignOutAlt = faSignOutAlt;
   faBars = faBars;
+  faUserCircle = faUserCircle;
 
   constructor(
     public authService: AuthService,
