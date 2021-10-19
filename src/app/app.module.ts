@@ -14,6 +14,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AuthService } from "./shared/services/auth.service";
+import { DrawerNavModule } from "./components/drawernav/drawernav.module"
 // import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 // import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 // import { provideDatabase,getDatabase } from '@angular/fire/database';
@@ -43,6 +44,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     AngularFirestoreModule,
     AngularFireAuthModule,
     MatSidenavModule,
+    DrawerNavModule,
     // provideFirebaseApp(() => initializeApp(environment.firebase)),
     // provideAnalytics(() => getAnalytics()),
     // provideAuth(() => getAuth()),
