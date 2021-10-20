@@ -1,84 +1,80 @@
-<div class="container-fluid">
-    <mat-drawer-container fullscreen>
-      <mat-drawer #drawer mode="over">
-        <div id='profilebut'>
-          <fa-icon [icon]="faUserCircle" class='newImg' routerLink='/home' routerLinkActive='active'></fa-icon>
-          <div id='columnflex'>
-            <span>USERNAME</span>
-            <div id='rowflex'>
-              <span>AGE</span>
-              <span>GRADE</span>
-            </div>
-          </div>
+<mat-drawer #drawer mode="over">
+  <div id='profilebut'>
+    <fa-icon [icon]="faUserCircle" class='newImg' routerLink='/home' routerLinkActive='active'></fa-icon>
+    <div id='columnflex'>
+      <div id='rowflex'>
+        <span>USERNAME</span>
+        <fa-icon [icon]="faTimes" class='icon other' (click)="drawer.toggle()"></fa-icon>
+      </div>
+      <div id='rowflex'>
+        <span>AGE</span>
+        <span>GRADE</span>
+      </div>
+    </div>
         </div>
 
-        <p>________________________________</p>
+  <p>________________________________</p>
 
-        <div class='adjus'>
-          <fa-icon [icon]="faHome" class='icon'></fa-icon>
-          <div class='excess'></div>
-          <input type='button' value='Home' class="nav-link" routerLink='/home' routerLinkActive='active'/><br>
-        </div>
-        <div class='smallAlignment'></div>
-        <div class='adjus'>
-          <fa-icon [icon]="faClipboardList" class='icon'></fa-icon>
-          <div class='excess'></div>
-          <input type='button' value='Tutor List' class="nav-link" routerLink='/forpass' routerLinkActive='active'/><br>
-        </div>
-        <div class='smallAlignment'></div>
-        <div class='adjus'>
-          <fa-icon [icon]="faCalendar" class='icon'></fa-icon>
-          <div class='excess'></div>
-          <input type='button' value='Calendar' class="nav-link" routerLink='/forpass' routerLinkActive='active'/><br>
-        </div>
-        <div class='smallAlignment'></div>
-        <div class='adjus'>
-          <fa-icon [icon]="faChartPie" class='icon'></fa-icon>
-          <div class='excess'></div>
-          <input type='button' value='Records' class="nav-link" routerLink='/forpass' routerLinkActive='active'/><br>
-        </div>
+  <div class='adjus'>
+    <fa-icon [icon]="faHome" class='icon'></fa-icon>
+    <div class='excess'></div>
+    <input type='button' value='Home' class="nav-link" routerLink='../home' routerLinkActive='active'/><br>
+    </div>
+    <div class='smallAlignment'></div>
+  <div class='adjus'>
+    <fa-icon [icon]="faClipboardList" class='icon'></fa-icon>
+    <div class='excess'></div>
+    <input type='button' value='Tutor List' class="nav-link" routerLink='../tutorlist' routerLinkActive='active'/><br>
+  </div>
+    <div class='smallAlignment'></div>
+  <div class='adjus'>
+    <fa-icon [icon]="faCalendar" class='icon'></fa-icon>
+    <div class='excess'></div>
+    <input type='button' value='Calendar' class="nav-link" routerLink='/forpass' routerLinkActive='active'/><br>
+  </div>
+  <div class='smallAlignment'></div>
+  <div class='adjus'>
+    <fa-icon [icon]="faChartPie" class='icon'></fa-icon>
+    <div class='excess'></div>
+    <input type='button' value='Records' class="nav-link" routerLink='/forpass' routerLinkActive='active'/><br>
+  </div>
 
-        <p>________________________________</p>
+  <p>________________________________</p>
 
-        <div class='adjus'>
-          <fa-icon [icon]="faInfoCircle" class='icon'></fa-icon>
-          <div class='excess'></div>
-          <input type='button' value='About' class="nav-link" routerLink='/forpass' routerLinkActive='active'/><br>
-        </div>
-        <div class='smallAlignment'></div>
-        <div class='adjus'>
-          <fa-icon [icon]="faBuilding" class='icon'></fa-icon>
-          <div class='excess'></div>
-          <input type='button' value='Sponsors' class="nav-link" routerLink='/forpass' routerLinkActive='active'/><br>
-        </div>
-        <div class='smallAlignment'></div>
-        <div class='adjus'>
-          <fa-icon [icon]="faPhone" class='icon'></fa-icon>
-          <div class='excess'></div>
-          <input type='button' value='Contact' class="nav-link" routerLink='/forpass' routerLinkActive='active'/><br>
-        </div>
-        <div class='smallAlignment'></div>
-        <div class='adjus'>
-          <fa-icon [icon]="faComments" class='icon'></fa-icon>
-          <div class='excess'></div>
-          <input type='button' value='Feedback' class="nav-link" routerLink='/forpass' routerLinkActive='active'/><br>
-        </div>
+  <div class='adjus'>
+    <fa-icon [icon]="faInfoCircle" class='icon'></fa-icon>
+    <div class='excess'></div>
+    <input type='button' value='About' class="nav-link" routerLink='/forpass' routerLinkActive='active'/><br>
+  </div>
+  <div class='smallAlignment'></div>
+  <div class='adjus'>
+    <fa-icon [icon]="faBuilding" class='icon'></fa-icon>
+    <div class='excess'></div>
+    <input type='button' value='Sponsors' class="nav-link" routerLink='/forpass' routerLinkActive='active'/><br>
+  </div>
+  <div class='smallAlignment'></div>
+  <div class='adjus'>
+    <fa-icon [icon]="faPhone" class='icon'></fa-icon>
+    <div class='excess'></div>
+    <input type='button' value='Contact' class="nav-link" routerLink='/forpass' routerLinkActive='active'/><br>
+  </div>
+  <div class='smallAlignment'></div>
+  <div class='adjus'>
+    <fa-icon [icon]="faComments" class='icon'></fa-icon>
+    <div class='excess'></div>
+    <input type='button' value='Feedback' class="nav-link" routerLink='/forpass' routerLinkActive='active'/><br>
+  </div>
 
-        <p>________________________________</p>
+  <p>________________________________</p>
 
-        <div class='adjus'>
-          <fa-icon [icon]="faSignOutAlt" class='icon'></fa-icon>
-          <div class='excess'></div>
-          <input type='button' value='Log Out' class="nav-link" (click)="authService.SignOut()"/>
-        </div>
-      </mat-drawer>
+  <div class='adjus'>
+    <fa-icon [icon]="faSignOutAlt" class='icon'></fa-icon>
+    <div class='excess'></div>
+    <input type='button' value='Log Out' class="nav-link" (click)="authService.SignOut()"/>
+  </div>
+</mat-drawer>
     
-      <mat-drawer-content>
-        <div class="head">
-          <fa-icon [icon]="faBars" id='menuicon' (click)="drawer.toggle()"></fa-icon>
-          <img src="../../assets/images/vlogo_white_bg.png" alt="Vibha Logo" id='logoimg'>
-        </div>
-      </mat-drawer-content>
-    </mat-drawer-container>
-
+<div class="head">
+  <fa-icon [icon]="faBars" id='menuicon' (click)="drawer.toggle()"></fa-icon>
+  <img src="../../assets/images/vlogo_white_bg.png" alt="Vibha Logo" id='logoimg'>
 </div>
