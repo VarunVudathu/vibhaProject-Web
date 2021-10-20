@@ -7,55 +7,56 @@
         <div class="other">
             <div class="content-wrap">
                 <h3>Sign Up</h3>
-                <div class='rowflex'>
-                    <div class='columnflex'>
-                        <div class='largeAlignment'></div>
-                        <span>Name</span>
+                <form>
+                    <div class='rowflex'>
+                        <div class='columnflex'>
+                            <div class='largeAlignment'></div>
+                            <span>Name</span>
+                            <div class='smallAlignment'></div>
+                            <input id="textbox" type="text" required/>
+                        </div>
                         <div class='smallAlignment'></div>
-                        <input id="textbox" type="text"/>
+                        <div class='columnflex'>
+                            <div class='largeAlignment'></div>
+                            <span>Username</span>
+                            <div class='smallAlignment'></div>
+                            <input id="textbox" type="text" required/>
+                        </div>
                     </div>
-                    <div class='smallAlignment'></div>
-                    <div class='columnflex'>
-                        <div class='largeAlignment'></div>
-                        <span>Username</span>
+                    <div class='rowflex'>
+                        <div class='columnflex'>
+                            <div class='largeAlignment'></div>
+                            <span>Email</span>
+                            <div class='smallAlignment'></div>
+                            <input id="textbox" type="email" required/>
+                        </div>
                         <div class='smallAlignment'></div>
-                        <input id="textbox" type="text" />
+                        <div class='columnflex'>
+                            <div class='largeAlignment'></div>
+                            <span>Password</span>
+                            <div class='smallAlignment'></div>
+                            <input id="textbox" type="password" required/>
+                        </div>
                     </div>
-                </div>
-                <div class='rowflex'>
-                    <div class='columnflex'>
-                        <div class='largeAlignment'></div>
-                        <span>Email</span>
+                    <div class='rowflex'>
+                        <div class='columnflex'>
+                            <div class='largeAlignment'></div>
+                            <span>Confirm Email</span>
+                            <div class='smallAlignment'></div>
+                            <input id="textbox" type="email" required/>
+                        </div>
                         <div class='smallAlignment'></div>
-                        <input id="textbox" type="text" />
+                        <div class='columnflex'>
+                            <div class='largeAlignment'></div>
+                            <span>Confirm Password</span>
+                            <div class='smallAlignment'></div>
+                            <input id="textbox" type="password" required/>
+                        </div>
                     </div>
-                    <div class='smallAlignment'></div>
-                    <div class='columnflex'>
-                        <div class='largeAlignment'></div>
-                        <span>Password</span>
-                        <div class='smallAlignment'></div>
-                        <input id="textbox" type="text" />
-                    </div>
-                </div>
-                <div class='rowflex'>
-                    <div class='columnflex'>
-                        <div class='largeAlignment'></div>
-                        <span>Confirm Email</span>
-                        <div class='smallAlignment'></div>
-                        <input id="textbox" type="text" />
-                    </div>
-                    <div class='smallAlignment'></div>
-                    <div class='columnflex'>
-                        <div class='largeAlignment'></div>
-                        <span>Confirm Password</span>
-                        <div class='smallAlignment'></div>
-                        <input id="textbox" type="text" />
-                    </div>
-                </div>
 
-                <div class='largeAlignment'></div>
-                <button id='subbutton'>Next</button><br>
-                
+                    <div class='largeAlignment'></div>
+                    <input type='submit' id='subbutton' value='Next' routerLink='/signupdetails' routerLinkActive='active'/><br>
+                </form>
                 <br>
                 <a routerLink='/login' routerLinkActive='active'>Have an account?</a>
             </div>

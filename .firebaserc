@@ -1,13 +1,4 @@
 {
-  "targets": {
-    "vibha-e4d08": {
-      "hosting": {
-        "vibhaProject-Web": [
-          "vibha-e4d08"
-        ]
-      }
-    }
-  },
   "projects": {
     "default": "vibha-e4d08"
   }
