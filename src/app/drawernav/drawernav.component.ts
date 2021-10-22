@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from "../../shared/services/auth.service";
+import { AuthService } from "../shared/services/auth.service";
 import { faHome, faClipboardList, faCalendar, faChartPie, faInfoCircle, faBuilding, faPhone, faComments, faSignOutAlt, faBars, faUserCircle, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({

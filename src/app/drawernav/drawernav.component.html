@@ -18,13 +18,16 @@
   <div class='adjus'>
     <fa-icon [icon]="faHome" class='icon'></fa-icon>
     <div class='excess'></div>
-    <input type='button' value='Home' class="nav-link" routerLink='../home' routerLinkActive='active'/><br>
+    <input type='button' value='Home' class="nav-link" routerLink='/home' routerLinkActive='active'/><br>
     </div>
     <div class='smallAlignment'></div>
   <div class='adjus'>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/tutorlist">Tutor List</a>
+    </mat-nav-list>
     <fa-icon [icon]="faClipboardList" class='icon'></fa-icon>
     <div class='excess'></div>
-    <input type='button' value='Tutor List' class="nav-link" routerLink='../tutorlist' routerLinkActive='active'/><br>
+    <input type='button' value='Tutor List' class="nav-link" routerLink='/tutorlist' routerLinkActive='active'/><br>
   </div>
     <div class='smallAlignment'></div>
   <div class='adjus'>
