@@ -18,8 +18,9 @@ const routes: Routes = [
   { path: 'signupdetailstutor', component: MoreSignUpDetailsTutorComponent },
   { path: 'signupdetailsstu', component: MoreSignUpDetailsStuComponent },
   { path: 'forpass', component: ForPassComponent},
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
-  { path: 'tutorlist', component: TutorListComponent},
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard], children: [
+    { path: 'tutorlist', component: TutorListComponent},
+  ]},
 ];
 
 @NgModule({

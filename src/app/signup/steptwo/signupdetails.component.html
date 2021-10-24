@@ -13,25 +13,25 @@
                 <div class='rowflex'>
                     <div class='columnflex'>
                         <span>Tutor</span>
-                        <fa-icon [icon]="faChalkboardTeacher" id='tutoricon'></fa-icon>
+                        <fa-icon [icon]="faChalkboardTeacher" id='tutoricon' [ngClass]='statusClassTu' (click)='newStyleTutor()'></fa-icon>
                         <div class='largeAlignment'></div>
                         <span>Age</span>
                         <div class='smallAlignment'></div>
-                        <input id="textbox" type="text" />
+                        <input id="textbox" type="text" #age required/>
                     </div>
                     <div class='smallAlignment'></div>
                     <div class='columnflex'>
                         <span>Student</span>
-                        <fa-icon [icon]="faUserGraduate" id='stuicon'></fa-icon>
+                        <fa-icon [icon]="faUserGraduate" id='stuicon' [ngClass]='statusClassStu' (click)='newStyleStu()'></fa-icon>
                         <div class='largeAlignment'></div>
                         <span>Grade</span>
                         <div class='smallAlignment'></div>
-                        <input id="textbox" type="text" />
+                        <input id="textbox" type="text" #grade required/>
                     </div>
                 </div>
 
                 <div class='largeAlignment'></div>
-                <button id='subbutton'>Next</button><br>
+                <input type='submit' id='subbutton' value='Next' (click)='storeData(age.value, grade.value)'/>
             </div>
         </div>
     </body>

@@ -63,17 +63,24 @@ body {
   }
 
   #tutoricon {
-      border-style: solid;
-      border-color: #d5b537;
-      border-width: 3px;
       padding: 20px;
       border-radius: 10px;
   }
   
   #stuicon {
-    border-style: solid;
-    border-color: #d5b537;
-    border-width: 3px;
     padding: 20px;
     border-radius: 10px;
+}
+
+.selected {
+  background-color: #d5b537;
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.notSelected {
+  border-style: solid;
+  border-color: #d5b537;
+  border-width: 3px;
 }
