@@ -12,4 +12,30 @@ export class MoreSignUpDetailsStuComponent implements OnInit{
   ) { }
 
   ngOnInit() { }
+
+  storeData(subjects) {
+    if (subjects != '') {
+      localStorage.setItem("subjects", subjects);
+    }
+
+    let emaillogin = localStorage.getItem('email');
+    let passlogin = localStorage.getItem('password');
+    let chosen = localStorage.getItem('choice');
+    let namelogin = localStorage.getItem('name');
+    let usernamelogin = localStorage.getItem('username');
+    let gradelogin = localStorage.getItem('grade');
+    let agelogin = localStorage.getItem('age');
+    let subjectlogin = localStorage.getItem('subjects');
+
+    let userInfo = {
+      username: usernamelogin,
+      password: passlogin,
+      name: namelogin,
+      email: emaillogin,
+      age: agelogin,
+      grade: gradelogin,
+      subjects: subjectlogin
+    }
+    this.authService.SignUp(userInfo, chosen);
+  }
 }

@@ -13,12 +13,12 @@
                         <div class='largeAlignment'></div>
                         <span>Subjects Help Needed</span>
                         <div class='smallAlignment'></div>
-                        <input id="textbox" type="text" />
+                        <input id="textbox" type="text" #subjects required/>
                     </div>
                 </div>
 
                 <div class='largeAlignment'></div>
-                <button id='subbutton'>Sign Up</button>
+                <input type='submit' id='subbutton' value='Sign Up' (click)='storeData(subjects.value)'/>
             </div>
         </div>
     </body>

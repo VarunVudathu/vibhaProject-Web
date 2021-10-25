@@ -1,5 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
-import { User } from "./user";
+import { UserStu } from "./user";
+import { UserTutor } from "./otheruser";
+import { User } from "./logincred";
 import { GoogleAuthProvider, FacebookAuthProvider } from 'firebase/auth';
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
@@ -39,25 +41,48 @@ export class AuthService {
         this.ngZone.run(() => {
           this.router.navigate(['home']);
         });
-        this.SetUserData(result.user);
+        this.CheckUserData(result.user, 'students');
       }).catch((error) => {
         window.alert(error.message)
       })
+  }
+
+  CheckUserData(user, choice) {
+    if(choice == 'students') {
+      const userRef: AngularFirestoreDocument<any> = this.afs.doc(`students/${user.email}`);
+      const userData: User = {
+        email: user.email,
+      }
+      return userRef.set(userData, {
+        merge: true
+      })
+    } else {
+      const userRef: AngularFirestoreDocument<any> = this.afs.doc(`tutors/${user.email}`);
+      const userData: User = {
+        email: user.email,
+      }
+      return userRef.set(userData, {
+        merge: true
+      })
+    }
+
   }
 
   // Sign up with email/password
-  SignUp(email, password) {
-    return this.afAuth.createUserWithEmailAndPassword(email, password)
-      .then((result) => {
+  SignUp(userInfo, choice) {
+    return this.afAuth.createUserWithEmailAndPassword(userInfo.email, userInfo.password)
+      .then(() => {
         /* Call the SendVerificaitonMail() function when new user sign 
         up and returns promise */
-        this.SetUserData(result.user);
+        this.SetUserData(userInfo, choice);
+        this.router.navigate(['login']);
+        window.alert('Sign up was successful!');
       }).catch((error) => {
         window.alert(error.message)
       })
   }
 
-  // Reset Forggot password
+  // Reset Forgot password
   ForgotPassword(passwordResetEmail) {
     return this.afAuth.sendPasswordResetEmail(passwordResetEmail)
     .then(() => {
@@ -67,7 +92,7 @@ export class AuthService {
     })
   }
 
-  // Returns true when user is looged in and email is verified
+  // Returns true when user is logged in and email is verified
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user') || '{}');
     return (user !== null && user.emailVerified !== false) ? true : false;
@@ -89,7 +114,6 @@ export class AuthService {
        this.ngZone.run(() => {
           this.router.navigate(['home']);
         })
-      this.SetUserData(result.user);
     }).catch((error) => {
       window.alert(error)
     })
@@ -98,19 +122,42 @@ export class AuthService {
   /* Setting up user data when sign in with username/password, 
   sign up with username/password and sign in with social auth  
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-  SetUserData(user) {
-    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
-    const userData: User = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      emailVerified: user.emailVerified
+  SetUserData(userInfo, choice) {
+    if(choice == 'students') {
+      console.log(userInfo);
+      const userRef: AngularFirestoreDocument<any> = this.afs.doc(`students/${userInfo.email}`);
+      const userData: UserStu = {
+        username: userInfo.username,
+        password: userInfo.password,
+        name: userInfo.name,
+        email: userInfo.email,
+        age: userInfo.age,
+        grade: userInfo.grade,
+        subjects: userInfo.subjects,
+      }
+      return userRef.set(userData, {
+        merge: true
+      })
+    } else {
+      const userRef: AngularFirestoreDocument<any> = this.afs.doc(`tutors/${userInfo.email}`);
+      const userData: UserTutor = {
+        username: userInfo.username,
+        password: userInfo.password,
+        name: userInfo.name,
+        email: userInfo.email,
+        age: userInfo.age,
+        grade: userInfo.grade,
+        lgrade: userInfo.lgrade,
+        hgrade: userInfo.hgrade,
+        subjects: userInfo.subjects,
+        description: userInfo.description,
+      }
+      return userRef.set(userData, {
+        merge: true
+      })
     }
-    return userRef.set(userData, {
-      merge: true
-    })
   }
+  
 
   // Sign out 
   SignOut() {
