@@ -41,40 +41,20 @@ export class AuthService {
         this.ngZone.run(() => {
           this.router.navigate(['home']);
         });
-        this.CheckUserData(result.user, 'students');
+        this.SetUserData(result.user);
       }).catch((error) => {
         window.alert(error.message)
       })
   }
 
-  CheckUserData(user, choice) {
-    if(choice == 'students') {
-      const userRef: AngularFirestoreDocument<any> = this.afs.doc(`students/${user.email}`);
-      const userData: User = {
-        email: user.email,
-      }
-      return userRef.set(userData, {
-        merge: true
-      })
-    } else {
-      const userRef: AngularFirestoreDocument<any> = this.afs.doc(`tutors/${user.email}`);
-      const userData: User = {
-        email: user.email,
-      }
-      return userRef.set(userData, {
-        merge: true
-      })
-    }
-
-  }
-
   // Sign up with email/password
   SignUp(userInfo, choice) {
     return this.afAuth.createUserWithEmailAndPassword(userInfo.email, userInfo.password)
-      .then(() => {
+      .then((result) => {
         /* Call the SendVerificaitonMail() function when new user sign 
         up and returns promise */
-        this.SetUserData(userInfo, choice);
+        this.SetUserData(result.user);
+        this.SetOtherUserData(userInfo, choice)
         this.router.navigate(['login']);
         window.alert('Sign up was successful!');
       }).catch((error) => {
@@ -111,9 +91,11 @@ export class AuthService {
   AuthLogin(provider) {
     return this.afAuth.signInWithPopup(provider)
     .then((result) => {
-       this.ngZone.run(() => {
-          this.router.navigate(['home']);
+      this.ngZone.run(() => {
+          this.router.navigate(['signupdetails']);
         })
+      this.SetUserData(result.user);
+      //this.SetOtherUserData(userInfo, choice);
     }).catch((error) => {
       window.alert(error)
     })
@@ -122,7 +104,22 @@ export class AuthService {
   /* Setting up user data when sign in with username/password, 
   sign up with username/password and sign in with social auth  
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-  SetUserData(userInfo, choice) {
+
+  SetUserData(user) {
+    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+    const userData: User = {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      emailVerified: user.emailVerified
+    }
+    return userRef.set(userData, {
+      merge: true
+    })
+  }
+
+  SetOtherUserData(userInfo, choice) {
     if(choice == 'students') {
       console.log(userInfo);
       const userRef: AngularFirestoreDocument<any> = this.afs.doc(`students/${userInfo.email}`);
