@@ -18,7 +18,8 @@ import { AuthService } from "./shared/services/auth.service";
 
 import { DrawerNavModule } from "./drawernav/drawernav.module"
 import { MatSidenavModule } from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import {MatListModule} from '@angular/material/list';
     MatSidenavModule,
     DrawerNavModule,
     MatListModule,
+    MatTabsModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

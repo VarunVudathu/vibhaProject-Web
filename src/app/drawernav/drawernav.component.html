@@ -1,6 +1,6 @@
 <mat-drawer #drawer mode="over">
   <div id='profilebut'>
-    <fa-icon [icon]="faUserCircle" class='newImg' routerLink='/home' routerLinkActive='active'></fa-icon>
+    <fa-icon [icon]="faUserCircle" class='newImg' (click)="profilepage()"></fa-icon>
     <div id='columnflex'>
       <div id='rowflex'>
         <span>USERNAME</span>

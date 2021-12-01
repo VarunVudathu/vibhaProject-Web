@@ -7,7 +7,8 @@ import { MoreSignUpDetailsTutorComponent } from './signup/stepthree/tutor/moresi
 import { MoreSignUpDetailsStuComponent } from './signup/stepthree/student/moresignupdetailsStu.component';
 import { ForPassComponent } from './forpass/forpass.component';
 import { HomeComponent } from './home/home.component';
-import { TutorListComponent } from './tutorlist/tutorlist.component'
+import { TutorListComponent } from './tutorlist/tutorlist.component';
+import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from "./shared/guard/auth.guard";
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'forpass', component: ForPassComponent},
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   { path: 'tutorlist', component: TutorListComponent},
+  { path: 'profile', component: ProfileComponent},
 ];
 
 @NgModule({
@@ -27,4 +29,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [LoginComponent, SignUpComponent, SignUpDetailsComponent, MoreSignUpDetailsTutorComponent, MoreSignUpDetailsStuComponent, ForPassComponent, HomeComponent, TutorListComponent]
+export const routingComponents = [LoginComponent, SignUpComponent, SignUpDetailsComponent, MoreSignUpDetailsTutorComponent, MoreSignUpDetailsStuComponent, ForPassComponent, HomeComponent, TutorListComponent, ProfileComponent]

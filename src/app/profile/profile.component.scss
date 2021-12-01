@@ -1,0 +1,41 @@
+body {
+  background-color: #8839bf;
+  justify-content: center;
+  text-align: center;
+}
+
+.head {
+  background-color: white;
+}
+
+.largeAlignment {
+  padding: 1%;
+}
+
+.smallAlignment {
+  padding: 0.3%;
+}
+
+#textbox {
+  background-color: #d5b537;
+  border: none;
+  width: 250px;
+  height: 35px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+#subbutton {
+  background-color: #464444;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 20px;
+  width: 250px;
+}
+
+mat-tab {
+  color: white;
+}

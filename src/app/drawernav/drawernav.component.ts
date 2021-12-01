@@ -36,4 +36,8 @@ export class DrawerNavComponent implements OnInit {
   tutorpage() {
     this.router.navigate(['tutorlist']);
   }
+
+  profilepage() {
+    this.router.navigate(['profile']);
+  }
 }
