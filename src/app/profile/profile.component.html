@@ -2,21 +2,55 @@
 <html>
     <body>
         <div class="head">
-            <img src="../../assets/images/vlogo_white_bg.png" alt="Vibha Logo">
+            <div class='otherrowflex'>
+                <fa-icon [icon]="faArrowLeft" class='headimg' (click)='goBack()'></fa-icon>
+                <img src="../../assets/images/vlogo_white_bg.png" alt="Vibha Logo">
+            </div>
         </div>
         <div class="other">
             <div class="content-wrap">
-                <h3>Log In</h3>
-                <div class='largeAlignment'></div>
+                <h3>My Profile</h3>
+                <div class='smallAlignment'></div>
+                <div class='columnflex'>
+                    <fa-icon [icon]="faUserCircle" class='profimg'></fa-icon>
+                    <input type='button' value='Change Image' class="other-button" /><br>
+                </div>
                 <mat-tab-group animationDuration="0ms" headerPosition="below" mat-align-tabs="center">
-                    <mat-tab label="Profile">
-                        <p>Hello</p>
+                    <mat-tab label="Info">
+                        <div class='otherbgr'>
+                            <p>Username:</p>
+                            <div class='rowflex'>
+                                <p class='palign'>Password:</p>
+                                <input type='button' value='Change Password' class="nav-link" /><br>
+                            </div>
+                            <p>Name:</p>
+                            <p>Email:</p>
+                            <div class='largeAlignment'></div>
+                            <input type='button' value='Make Changes' class="nav-link" /><br>
+                        </div>
                     </mat-tab>
-                    <mat-tab label="Second">
-
+                    <mat-tab label="Other Info">
+                        <div class='otherbg'>
+                            <p>Age:</p>
+                            <p>Grade:</p>
+                            <p>Subjects:</p>
+                            <p># of Sessions:</p>
+                            <div class='rowflex'>
+                                <p>Session Dates:</p>
+                                <input type='button' value='View Dates' class="nav-link" /><br>
+                            </div>
+                            <div class='largeAlignment'></div>
+                            <input type='button' value='Make Changes' class="nav-link" /><br>
+                        </div>
                     </mat-tab>
-                    <mat-tab label="Third">
-
+                    <mat-tab label="Settings">
+                        <div class='otherbgc'>
+                            <input type='button' value='User Settings' class="setbutton" /><br>
+                            <div class='largeAlignment'></div>
+                            <input type='button' value='Notification Settings' class="setbutton" /><br>
+                            <div class='largeAlignment'></div>
+                            <input type='button' value='Save Changes' class="nav-link" /><br>
+                        </div>
                     </mat-tab>
                 </mat-tab-group>
             </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from "../shared/services/auth.service";
 import { ActivatedRoute, Router } from '@angular/router';
+import { faUserCircle, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-profile',
@@ -8,6 +9,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  faUserCircle = faUserCircle
+  faArrowLeft = faArrowLeft
 
   constructor(
     public authService: AuthService,
@@ -15,4 +18,8 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit() { }
+
+  goBack() {
+    window.history.back();
+  }
 }
