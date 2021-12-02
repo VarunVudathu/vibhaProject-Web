@@ -20,6 +20,7 @@ import { DrawerNavModule } from "./drawernav/drawernav.module"
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     DrawerNavModule,
     MatListModule,
     MatTabsModule,
+    MatDialogModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
